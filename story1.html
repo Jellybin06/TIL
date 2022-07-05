@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="story1.css">
+</head>
+<body>
+    <div class="container">
+        <div class="progress">
+          <div class="percent"></div>
+        </div>
+        <div class="steps">
+          <div class="step" id="0"></div><h2>0~9살</h2>
+          <div class="step" id="1"></div><h2>9~14살</h2>
+          <div class="step" id="2"></div><h2>14~17살</h2>
+          <div class="step" id="3"></div><h2>17~살</h2>
+        </div>
+      </div>
+        <p></p>
+      <div id="box">
+        
+      </div>
+
+      <script>
+        let els = document.getElementsByClassName('step');
+        let steps = [];
+        Array.prototype.forEach.call(els, (e) => {
+        steps.push(e);
+        e.addEventListener('click', (x) => {
+        progress(x.target.id);
+    });
+});
+
+        function progress(stepNum) {
+        let p = stepNum * 30;
+        document.getElementsByClassName('percent')[0].style.width = `${p}%`;
+        steps.forEach((e) => {
+        if (e.id === stepNum) {
+            e.classList.add('selected');
+            e.classList.remove('completed');
+}
+        if (e.id < stepNum) {
+            e.classList.add('completed');
+}
+        if (e.id > stepNum) {
+            e.classList.remove('selected', 'completed');
+}
+});
+}
+</script>
+</body>
+</html>
