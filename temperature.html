@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+</head>
+
+<body>
+
+    <img src="./05ac6009595cfe9c9a69875e3a446efa8f324a0b9c48f77dbce3a43bd11ce785.png" style="width:300px">
+
+
+
+    <script>
+
+        const kelvin = prompt("켈빈 온도는 몇 도입니까?", "293");
+
+        let celsius = Math.ceil(kelvin - 273.15); //ceil == 올림
+
+        let farenheit = Math.ceil((kelvin - 273.15) * 9/5 + 32);
+
+        let newton = Math.floor((kelvin - 273.15)*0.33); //floor == 내림
+
+        document.write(`<h1>${kelvin}K = ${celsius}°C = ${farenheit}°F = ${newton}N </h1>`);
+
+    </script>
+
+</body>
+
+</html>
