@@ -19,14 +19,6 @@
           }
           $i = $i + 1;
         }
-        /*
-        echo "<li>$list[0]</li>\n";
-        echo "<li>$list[1]</li>\n";
-        echo "<li>$list[2]</li>\n";
-        echo "<li>$list[3]</li>\n";
-        echo "<li>$list[4]</li>\n";
-        echo "<li>$list[5]</li>\n";
-        */
       ?>
     </ol>
     <h2>
