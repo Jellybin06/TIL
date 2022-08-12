@@ -51,7 +51,8 @@
     <?php } ?>
     <h2>
 
-    <form action="create_process.php" method="post">
+    <form action="update_process.php" method="post">
+      <input type="hidden" name="old_title" value="">
       <p>
         <input type="text" name="title" placeholder="Title" value="<?php print_title(); ?>">
       </p>
