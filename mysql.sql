@@ -20,3 +20,27 @@ CREATE TABLE topic(
     profile VARCHAR(100) NULL, -- 100글자 이내 , 공백 가능
     PRIMARY KEY(id)); -- 기본키 (id)
     
+
+-- 테이블의 구조를 보여줌
+-- DESC 테이블 이름
+
+--테이블에 값 추가
+INSERT INTO topic (title,description,created,author,profile) VALUES('MySQL','MySQL is ...',NOW(),'egoing','developer');
+
+--테이블 전체 보여주기
+SELECT * FROM topic;
+
+--테이블에 2번째 값 추가
+INSERT INTO topic (title,description,created,author,profile) VALUES('ORACLE','ORACLE is ...',NOW(),'egoing','developer');
+
+--테이블 전체 보여주기
+SELECT * FROM topic;
+
+--나머지 데이터 추가
+INSERT INTO topic (title,description,created,author,profile) VALUES('MongoDB','MongoDB is ...',NOW(),'egoing','developer');
+INSERT INTO topic (title,description,created,author,profile) VALUES('PostgreSQL','PostgreSQL is ...',NOW(),'taeho','data scientist, developer');
+
+--최종데이터
+SELECT * FROM topic;
+
+
