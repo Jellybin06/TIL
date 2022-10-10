@@ -43,4 +43,18 @@ INSERT INTO topic (title,description,created,author,profile) VALUES('PostgreSQL'
 --최종데이터
 SELECT * FROM topic;
 
+-- id, title, created, author 만 보여주기
+SELECT id,title,created,author FROM topic;
+
+-- author 은 egoing이 포함된 값만 보여주기 나머지 위와 동일
+SELECT id,title,created,author FROM topic WHERE author='egoing';
+
+-- author 은 egoing이 포함된 값만 보여주고 id 값은 역순 정렬
+SELECT id,title,created,author FROM topic WHERE author='egoing' ORDER BY id DESC;
+
+-- author 은 egoing이 포함된 값만 보여주고 id 값은 역순 정렬 + 2개까지만 보여주기
+SELECT id,title,created,author FROM topic WHERE author='egoing' ORDER BY id DESC LIMIT 2;
+
+
+
 
