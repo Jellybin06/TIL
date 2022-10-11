@@ -55,6 +55,11 @@ SELECT id,title,created,author FROM topic WHERE author='egoing' ORDER BY id DESC
 -- author 은 egoing이 포함된 값만 보여주고 id 값은 역순 정렬 + 2개까지만 보여주기
 SELECT id,title,created,author FROM topic WHERE author='egoing' ORDER BY id DESC LIMIT 2;
 
+-- topic 테이블 전체 보여주가ㅣ
+ SELECT * FROM topic;
 
+-- topic 테이블에서 id가 2인 description과 title 값을 바꿈
+UPDATE topic SET description='Oracle is ...', title='Oracle' WHERE id=2;
 
-
+-- id 값이 5인 행 삭제
+DELETE FROM topic WHERE id = 5;
