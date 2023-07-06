@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let money = 0;
+        function buy(price) {
+            if(money == 0 || money < price) {
+                alert("돈 부족!");
+            }
+            else {
+                switch(price){
+                    case 1800:
+                        money -= price;
+                        alert("허니버터칩 구매");
+                        setMoney(0);
+                        break;
+                    case 1500:
+                        money -= price;
+                        alert("김치만두 구매");
+                        setMoney(0);
+                        break;
+                    case 800:
+                    money -= price;
+                        alert("v콘 구매");
+                        setMoney(0);
+                        break;  
+                    default:
+                        break;     
+                }
+            }
+        }
+
+        function setMoney(won) {
+            money += won; 
+            document.getElementById("main").innerHTML = "현재 잔액 : "+money+"원"; //아이디가 main인 아이디를 찾아간다
+            isBuy();
+        }
+
+        function isBuy() {
+            if(money >= 1800) {
+                document.getElementById("buy1").style.color="blue"; //1800원 보다 크거나 같을 때 색깔 출력
+                document.getElementById("buy2").style.color="blue";
+                document.getElementById("buy3").style.color="blue";
+            }
+            else if(money >= 1500) {
+                document.getElementById("buy1").style.color="red"; //1500원 보다 크거나 같을 때 색깔 출력
+                document.getElementById("buy2").style.color="blue";
+                document.getElementById("buy3").style.color="blue";
+            }
+            else if(money >= 800) {
+                document.getElementById("buy1").style.color="red"; //800원 보다 크거나 같을 때 색깔 출력
+                document.getElementById("buy2").style.color="red";
+                document.getElementById("buy3").style.color="blue";
+            }
+            else {
+                document.getElementById("buy1").style.color="red"; // 아니면 빨간 색깔 출력
+                document.getElementById("buy2").style.color="red";
+                document.getElementById("buy3").style.color="red";
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <div>
+        <button onclick="buy(1800)" id="buy1">허니버터칩(1800원)</button>
+        <button onclick="buy(1500)" id="buy2">김치만두(1500원)</button>
+        <button onclick="buy(800)" id="buy3">옥수수브이콘(800원)</button>
+    </div>
+    <div>
+        <button onclick="setMoney(1000)">1000원</button>
+        <button onclick="setMoney(500)">500원</button>
+        <button onclick="setMoney(100)">100원</button>
+    </div>
+    <div>
+        <p id="main">현재 잔액 : 0원</p>
+    </div>
+</body>
+</html>
